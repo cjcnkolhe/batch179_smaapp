@@ -41,5 +41,12 @@ public class StudentServiceImpl  implements StudentServiceI{
 
 		sr.deleteById(studentId);
 	}
+	@Override
+	public void updateStudentBatch(int studentId, String batchNumber) {
+		 Student  s          = sr.findById(studentId).get();
+	       s.setBatchNumber(batchNumber);
+	       
+	       sr.save(s);
+	}
 
 }

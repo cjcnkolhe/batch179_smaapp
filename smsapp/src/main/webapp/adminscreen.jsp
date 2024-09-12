@@ -46,8 +46,8 @@ form {
 		document.fn.action = "/fees"
 		document.fn.submit();
 	}
-	function batch() {
-		document.fn.action = "/batch"
+	function batchUpdate() {
+		document.fn.action = "/editBatch"
 		document.fn.submit();
 	}
 	function remove() {
@@ -225,7 +225,7 @@ form {
 						<td>
 						<div class="btn-group btn-group-sm" role="group" aria-label="...">
 									<button class="btn btn-outline-success" onclick="fees()">Pay-Fees</button>
-									<button class="btn btn-outline-primary">Shift-Batch</button>
+									<button class="btn btn-outline-primary" onclick="batchUpdate()">Shift-Batch</button>
 									<button class="btn btn-outline-danger" onclick="remove()">Remove</button>
 								</div>
 							</td>

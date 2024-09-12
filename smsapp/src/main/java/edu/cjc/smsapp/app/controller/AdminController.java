@@ -88,7 +88,21 @@ public String removeStudent(@RequestParam("id") int studentId,Model m) {
 	return "adminscreen";
 }
 	
+@RequestMapping("/editBatch")
+public String onBatch(@RequestParam("id") int id,Model m) {
+      Student st  =ssi.getSingleStudent(id);	
+m.addAttribute("st", st);
+      return "batchUpdate";
+}
+
 	
-	
+@RequestMapping("/batchUpdate")
+public String payfees(@RequestParam("studentid") int studentId,@RequestParam("batchNumber") String batchNumber,Model m) {
+	  
+	ssi.updateStudentBatch(studentId,batchNumber);
+	  List<Student> list1=ssi.getAllStudents();
+		m.addAttribute("data", list1);
+	return "adminscreen";
+}
 	
 }
